@@ -1,0 +1,190 @@
+---   
+- hosts: My_Group
+  vars:
+    username: "admin"
+    password: "83656dee4afd4c2dba435b7d420dc491"
+  become: yes
+  become_method: sudo
+
+  tasks:
+
+
+    - name: Restart Jenkins if required
+      service:
+        name: jenkins
+        state: restarted 
+
+    - name: Sleep for 30 seconds and continue with play
+      wait_for: 
+        timeout: 30
+
+        
+
+    - name: Install plugin
+      jenkins_plugin:
+        name: google-oauth-plugin
+        url_username: "{{username}}"
+        url_password: "{{password}}"
+
+
+    - name: Install plugin
+      jenkins_plugin:
+        name: maven-invoker-plugin
+        url_username: "{{username}}"
+        url_password: "{{password}}"
+
+
+    - name: Install plugin
+      jenkins_plugin:
+        name: timestamper-plugin
+        url_username: "{{username}}"
+        url_password: "{{password}}"
+
+
+
+    - name: Install plugin
+      jenkins_plugin:
+        name: pipeline-maven-integration-plugin
+        url_username: "{{username}}"
+        url_password: "{{password}}"
+
+    - name: Install plugin
+      jenkins_plugin:
+        name: docker-pipeline-plugin
+        url_username: "{{username}}"
+        url_password: "{{password}}"
+
+    - name: Install plugin
+      jenkins_plugin:
+        name: google-kubernetes-engine
+        url_username: "{{username}}"
+        url_password: "{{password}}"
+
+
+
+
+    - name: Install plugin
+      jenkins_plugin:
+        name: oauth-credentials
+        url_username: "{{username}}"
+        url_password: "{{password}}"   
+
+    - name: Install plugin
+      jenkins_plugin:
+        name: google-login
+        url_username: "{{username}}"
+        url_password: "{{password}}"
+
+    - name: Install plugin
+      jenkins_plugin:
+        name: docker-plugin
+        url_username: "{{username}}"
+        url_password: "{{password}}"
+
+
+    - name: Install plugin
+      jenkins_plugin:
+        name: docker-workflow
+        url_username: "{{username}}"
+        url_password: "{{password}}"
+
+
+    - name: Install plugin
+      jenkins_plugin:
+        name: docker-compose-build-step
+        url_username: "{{username}}"
+        url_password: "{{password}}"
+
+
+    - name: Install plugin
+      jenkins_plugin:
+        name: google-container-registry-auth
+        url_username: "{{username}}"
+        url_password: "{{password}}"
+
+    - name: Install plugin
+      jenkins_plugin:
+        name: email-ext
+        url_username: "{{username}}"
+        url_password: "{{password}}"
+
+    - name: Install plugin
+      jenkins_plugin:
+        name: http_request
+        url_username: "{{username}}"
+        url_password: "{{password}}"
+
+    - name: Install plugin
+      jenkins_plugin:
+        name: http-post
+        url_username: "{{username}}"
+        url_password: "{{password}}"
+
+    - name: Install plugin
+      jenkins_plugin:
+        name: quality-gates
+        url_username: "{{username}}"
+        url_password: "{{password}}"
+  
+
+    - name: Install plugin
+      jenkins_plugin:
+        name: workflow-aggregator
+        url_username: "{{username}}"
+        url_password: "{{password}}"
+
+    - name: Install plugin
+      jenkins_plugin:
+        name: build-pipeline-plugin
+        url_username: "{{username}}"
+        url_password: "{{password}}"
+
+
+    - name: Install plugin
+      jenkins_plugin:
+        name: pipeline-stage-step
+        url_username: "{{username}}"
+        url_password: "{{password}}"
+
+    - name: Install plugin
+      jenkins_plugin:
+        name: pipeline-rest-api
+        url_username: "{{username}}"
+        url_password: "{{password}}"
+
+
+    - name: Install plugin
+      jenkins_plugin:
+        name: pipeline-githubnotify-step
+        url_username: "{{username}}"
+        url_password: "{{password}}"
+
+    - name: Install plugin
+      jenkins_plugin:
+        name: workflow-cps
+        url_username: "{{username}}"
+        url_password: "{{password}}"
+
+    - name: Install plugin
+      jenkins_plugin:
+        name: groovy
+        url_username: "{{username}}"
+        url_password: "{{password}}"
+
+    - name: Install plugin
+      jenkins_plugin:
+        name: job-import-plugin
+        url_username: "{{username}}"
+        url_password: "{{password}}"     
+
+    - name: Install plugin
+      jenkins_plugin:
+        name: pipeline-utility-steps
+        url_username: "{{username}}"
+        url_password: "{{password}}"
+
+    - name: Restart Jenkins if required
+      service:
+        name: jenkins
+        state: restarted        
+    
